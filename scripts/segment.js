@@ -19,10 +19,11 @@ export function speedRulerColorForPosition(wrapped, position) {
   const distance = this.totalPriorDistance + this.measureDistance(position);
   
   // TO-DO: Pull info from token
-  const color = distance < 30 ? 0x00FF00 :
-                distance > 30 && distance < 60 ? 0xFFFF00 :
+  log(`distance is ${distance}`);
+  const color = distance <= 30 ? 0x00FF00 :
+                (distance > 30 && distance <= 60) ? 0xFFFF00 :
                 0xFF0000;
-  
+
   return color;
 }
  
