@@ -1,3 +1,6 @@
+import { getSetting } from "./settings.js";
+import { log } from "./module.js";
+
 /*
  * For a given position, return the color for the ruler highlight.
  * @param {Object} position Object with x and y indicating the pixels at the grid position.
@@ -8,6 +11,8 @@ export function speedRulerColorForPosition(wrapped, position) {
   // do we have a starting token?
   // TO-DO: Move to Segment Property setup
   //        Store the token info, such as speed, speed multiplier
+  if(!getSetting("speed-ruler-active")) return wrapped(position);
+  
   const starting_token = this.ruler._getMovementToken();
   if(!starting_token) return wrapped(position);
 
