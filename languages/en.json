@@ -46,7 +46,7 @@
 				},
 				"speedProvider": {
 					"name": "Speed Settings Provider",
-					"hint": "Select who provides speed information for tokens duing coloring. Speed Ruler offers a generic speed provider that provides basic functionality and should work for all game systems if configured correctly. More speed providers can be made available via game systems and installed modules. Selecting a different speed provider than the generic speed provider may offer a better integration into the rules of the game system you're using. The options below are dependent upon the speed provider selected here.",
+					"hint": "Select who provides speed information for tokens during coloring. Speed Ruler offers a generic speed provider that provides basic functionality and should work for all game systems if configured correctly. More speed providers can be made available via game systems and installed modules. Selecting a different speed provider than the generic speed provider may offer a better integration into the rules of the game system you're using. The options below are dependent upon the speed provider selected here.",
 					"choices": {
 						"module": "Module {name}",
 						"native": "Generic",
