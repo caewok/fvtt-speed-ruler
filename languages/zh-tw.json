@@ -21,7 +21,10 @@
 	      "name": "Use Speed Ruler",
 	      "hint": "When selected, use the Speed Ruler to color the ruler highlighting when starting measurement from a token."
 	    },
-	  
+	    "alwaysShowSpeedForPCs": {
+				"name": "Show PC speed to everyone",
+				"hint": "If enabled the coloring based on actor speed for player characters will shown to everyone, even if they don't have observer permission for the character sheet."
+			},
       "speedProviderSettings": {
 				"name": "速度提供者設定",
 				"hint": "速度提供者設定 包括 所有遊戲系統特定的設定。",

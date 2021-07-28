@@ -26,7 +26,10 @@
 	      "name": "Usar Regla de Velocidad",
 	      "hint": "Cuando esté seleccionado, use la Regla de Velocidad para colorear el resaltado de la regla al comenzar la medición desde una ficha."
 	    },
-	  
+	    "alwaysShowSpeedForPCs": {
+				"name": "Mostrar velocidad de los PJs a todo el mundo",
+				"hint": "Si se habilita, se mostrará a todo el mundo los códigos de colores de las rutas de los PJs, incluso si no tienen permisos de observador para ese personaje."
+			},
       "speedProviderSettings": {
 				"name": "Proveedor de configuración de velocidad",
 				"hint": "El proveedor de ajustes de velocidad contiene todos los ajustes específicos de cada sistema.",

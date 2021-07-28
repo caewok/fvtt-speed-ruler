@@ -21,7 +21,10 @@
 	      "name": "Utiliser la Règle de Vitesse",
 	      "hint": "Lorsqu'elle est sélectionnée, utilisez la Règle de Vitesse pour colorer la règle en surbrillance lors du démarrage de la mesure à partir d'un jeton."
 	    },
-	  
+	    "alwaysShowSpeedForPCs": {
+				"name": "Montrer la vitesse du PC à tout le monde",
+				"hint": "Si elle est activée, la coloration basée sur la vitesse de l'acteur pour les personnages joueurs sera affichée à tout le monde, même s'ils n'ont pas la permission d'observateur pour la feuille de personnage."
+			},
       "speedProviderSettings": {
 				"name": "Paramètres du Fournisseur de Vitesse",
 				"hint": "Les Paramètres du Fournisseur de Vitesse contiennent tous les paramètres spécifiques au système de jeu.",
