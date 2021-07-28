@@ -27,7 +27,7 @@ function register(module, type, speedProvider) {
 
 function setupProvider(speedProvider) {
 	if (speedProvider instanceof SpeedProvider) {
-		const unreachableColor = {id: "unreachable", default: speedProvider.defaultUnreachableColor, name: "drag-ruler.settings.speedProviderSettings.color.unreachable.name"};
+		const unreachableColor = {id: "unreachable", default: speedProvider.defaultUnreachableColor, name: "speedruler.settings.speedProviderSettings.color.unreachable.name"};
 		for (const color of speedProvider.colors.concat([unreachableColor])) {
 			game.settings.register(MODULE_ID, `speedProviders.${speedProvider.id}.color.${color.id}`, {
 				config: false,
