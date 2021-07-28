@@ -18,12 +18,12 @@ export function speedRulerColorForPosition(wrapped, position) {
   if(!starting_token) return wrapped(position);
 
   // Don't apply colors if the current user does not have at least observer permissions
-  if(token.actor.permission < CONST.ENTITY_PERMISSIONS.OBSERVER) {
+  if(starting_token.actor.permission < CONST.ENTITY_PERMISSIONS.OBSERVER) {
     return wrapped(position);
   }
 
-  const ranges = getRangesFromSpeedProvider(token);
-  log(`token ${token.id} ranges`, ranges);
+  const ranges = getRangesFromSpeedProvider(starting_token);
+  log(`starting_token ${starting_token.id} ranges`, ranges);
   if(ranges.length === 0) return wrapped(position);
   
   const distance = this.totalPriorDistance + this.measureDistance(position);
