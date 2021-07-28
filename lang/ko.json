@@ -1,0 +1,64 @@
+{
+	"speedruler": {
+	  "genericSpeedProvider": {
+			"settings": {
+				"dashMultiplier": {
+					"name": "질주 승수",
+					"hint": "측정된 경로에 색을 입힐 때 추가 속도를 제공하는 데 사용할 수 있다. 추가 속도를 비활성화하려면 이 값을 0으로 설정한다."
+				},
+				"speedAttribute": {
+					"name": "속도 어트리뷰트",
+					"hint": "토큰의 이동속도를 정의하는 속성이다. 측정 경로에 색을 입힐 때 사용한다."
+				}
+			},
+			"speeds": {
+				"walk": "보행",
+				"dash": "질주"
+			}
+		},
+	  "settings": {
+	    "speedRulerActive": {
+	      "name": "속도 눈금자 사용",
+	      "hint": "선택하면 속도 눈금자를 사용하여 토큰에서 측정을 시작할 때 눈금자 강조 표시에 색상을 지정합니다."
+	    },
+	  
+      "speedProviderSettings": {
+				"name": "속도 공급자 설정",
+				"hint": "속도 공급자 설정은 게임 시스템별 설정을 모두 포함한다.",
+				"button": "속도 공급자 설정",
+				"windowTitle": "속도 공급자 설정",
+				"headers": {
+					"speedProvider": "속도 공급자",
+					"speedProviderSettings": "속도 공급자 관련 설정"
+				},
+				"activeProvider": {
+					"name": "현재 활성화된 속도 공급자",
+					"hint": "아래에 표시된 설정은 활성화된 속도 공급자를 보여준다. GM이 다른 속도 공급자를 선택하면 사용 가능한 설정이 변경될 수 있다."
+				},
+				"noSettings": "이 속도 공급자는 구성 옵션을 제공하지 않습니다.",
+				"color": {
+					"name": "{colorName} 색상",
+					"hint": "{colorName} 범위 내에서의 칸의 색상을 지정하는데 사용할 색상.",
+					"unreachable": {
+						"name": "도달 불가",
+						"hint": "드래그한 토큰으로 도달할 수 없는 공간의 색상"
+					}
+				},
+				"speedProvider": {
+					"name": "속도 설정 공급자",
+					"hint": "색을 입힐 동안 사용할 토큰에 대한 속도 정보 제공자를 선택한다. Drag Ruler는 기본 기능을 제공하며 올바르게 구성된 경우 모든 게임 시스템에서 작동하는 일반적 속도 공급자를 제공한다. 게임 시스템과 설치된 모듈을 통해 더 많은 속도 공급자를 이용할 수 있다. 일반 속도 공급자와는 다른 속도 공급자를 선택하면 사용 중인 게임 시스템의 규칙에 더 잘 통합될 수 있다.아래 옵션은 여기에서 선택한 속도 공급자에 따라 다르다.",
+					"choices": {
+						"module": "모듈 {name}",
+						"native": "포괄적",
+						"system": "시스템 {name}"
+					}
+				}
+			}  	  
+	  }
+	  
+	}
+	
+}
+	  
+	
+	

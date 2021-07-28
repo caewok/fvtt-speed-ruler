@@ -17,8 +17,8 @@ export function registerSettings() {
   log("Registering Speed Ruler settings.");
   
   game.settings.register(MODULE_ID, "speed-ruler-active", {
-    name: 'Use Speed Ruler',
-    hint: "When selected, use the Speed Ruler to color the ruler highlighting when starting measurement from a token.",
+    name: "speedruler.settings.speedRulerActive.name",
+    hint: "speedruler.settings.speedRulerActive.hint",
     scope: "user",
     config: true,
     default: true,
@@ -35,9 +35,9 @@ export function registerSettings() {
 	});
 
 	game.settings.registerMenu(MODULE_ID, "speedProviderSettings", {
-		name: "drag-ruler.settings.speedProviderSettings.name",
-		hint: "drag-ruler.settings.speedProviderSettings.hint",
-		label: "drag-ruler.settings.speedProviderSettings.button",
+		name: "speedruler.settings.speedProviderSettings.name",
+		hint: "speedruler.settings.speedProviderSettings.hint",
+		label: "speedruler.settings.speedProviderSettings.button",
 		icon: "fas fa-tachometer-alt",
 		type: SpeedProviderSettings,
 		restricted: false,
