@@ -1,5 +1,13 @@
+import { currentSpeedProvider,
+         getRangesFromSpeedProvider,
+         getUnreachableColorFromSpeedProvider,
+         initApi,
+         registerModule,
+         registerSystem} from "./api.js";
 import { registerSpeedRuler } from "./patching.js";
 import { registerSettings } from "./settings.js";
+
+import {SpeedProvider} from "./speed_provider.js"
 
 export const MODULE_ID = 'speedruler';
 
@@ -14,6 +22,12 @@ export function log(...args) {
 
 Hooks.once('init', async function() {
   log('Initializing.');
+  registerSettings();
+  initApi();
+  window.speedRuler = {
+		registerModule,
+		registerSystem,
+	};
 
 });
 
@@ -22,14 +36,13 @@ Hooks.once('init', async function() {
 // but before entities, packs, UI, canvas, etc. has been initialized
 Hooks.once('setup', async function() {
   log("Setup.");
-  registerSettings();
 });
 
 // modules ready
 // ready is called once everything is loaded up and ready to go.
 Hooks.once('ready', async function() {
   log('Readying.')
-  
+
   if(game?.user?.isGM === undefined || game.user.isGM) {
     if(!game.modules.get('lib-wrapper')?.active) ui.notifications.error("'Speed Ruler' requires the 'libWrapper' module. Please install and activate this dependency.");
     if(!game.modules.get('libruler')?.active) ui.notifications.error("'Speed Ruler' requires the 'libRuler' module. Please install and activate this dependency.");
@@ -45,8 +58,7 @@ Hooks.once('devModeReady', ({ registerPackageDebugFlag }) => {
 Hooks.once('libRulerReady', async function() {
   log("libRuler is ready to go.");
   registerSpeedRuler();
- 
-  // tell modules that the Speed Ruler is set up
-  Hooks.callAll('speedRulerReady');
 
+  // tell modules that the Speed Ruler is set up
+  Hooks.callAll('speedRulerReady', SpeedProvider);
 });
