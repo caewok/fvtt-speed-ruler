@@ -9,9 +9,9 @@ import { MODULE_ID } from "./module.js";
 export class SpeedProviderSettings extends FormApplication {
 	static get defaultOptions() {
 		return mergeObject(super.defaultOptions, {
-			id: "drag-ruler-speed-provider-settings",
-			title: game.i18n.localize("drag-ruler.settings.speedProviderSettings.windowTitle"),
-			template: "modules/drag-ruler/templates/speed_provider_settings.html",
+			id: "speedruler-speed-provider-settings",
+			title: game.i18n.localize("speedruler.settings.speedProviderSettings.windowTitle"),
+			template: "modules/speedruler/templates/speed_provider_settings.html",
 			width: 600,
 		})
 	}
@@ -34,7 +34,7 @@ export class SpeedProviderSettings extends FormApplication {
 			const type = provider.id.substring(0, dotPosition)
 			const id = provider.id.substring(dotPosition + 1)
 			if (type === "native") {
-				provider.selectTitle = game.i18n.localize("drag-ruler.settings.speedProviderSettings.speedProvider.choices.native")
+				provider.selectTitle = game.i18n.localize("speedruler.settings.speedProviderSettings.speedProvider.choices.native")
 			}
 			else {
 				let name
@@ -44,7 +44,7 @@ export class SpeedProviderSettings extends FormApplication {
 				else {
 					name = game.system.data.title
 				}
-				provider.selectTitle = game.i18n.format(`drag-ruler.settings.speedProviderSettings.speedProvider.choices.${type}`, {name})
+				provider.selectTitle = game.i18n.format(`speedruler.settings.speedProviderSettings.speedProvider.choices.${type}`, {name})
 			}
 			provider.isSelected = provider.id === selectedProvider
 			return provider
@@ -53,8 +53,8 @@ export class SpeedProviderSettings extends FormApplication {
 
 		data.providerSelection = {
 			id: "speedProvider",
-			name: game.i18n.localize("drag-ruler.settings.speedProviderSettings.speedProvider.name"),
-			hint: game.i18n.localize("drag-ruler.settings.speedProviderSettings.speedProvider.hint"),
+			name: game.i18n.localize("speedruler.settings.speedProviderSettings.speedProvider.name"),
+			hint: game.i18n.localize("speedruler.settings.speedProviderSettings.speedProvider.hint"),
 			type: String,
 			choices: data.providers.reduce((choices, provider) => {
 				choices[provider.id] = provider.selectTitle
@@ -109,9 +109,9 @@ export class SpeedProviderSettings extends FormApplication {
 
 	onSpeedProviderChange(event) {
 		// Hide all module settings
-		document.querySelectorAll(".drag-ruler-provider-settings").forEach(element => element.style.display = "none")
+		document.querySelectorAll(".speedruler-provider-settings").forEach(element => element.style.display = "none")
 		// Show the settings block for the currently selected module
-		document.getElementById(`drag-ruler.provider.${event.currentTarget.value}`).style.display = ""
+		document.getElementById(`speedruler.provider.${event.currentTarget.value}`).style.display = ""
 
 		// Recalculate window height
 		this.element[0].style.height = null
@@ -126,7 +126,7 @@ function toDomHex(value) {
 
 function enumerateProviderSettings(provider) {
 	const colorSettings = []
-	const unreachableColor = {id: "unreachable", name: "drag-ruler.settings.speedProviderSettings.color.unreachable.name"}
+	const unreachableColor = {id: "unreachable", name: "speedruler.settings.speedProviderSettings.color.unreachable.name"}
 
 	// Resolve settings for the colors
 	for (const color of provider.colors.concat([unreachableColor])) {
@@ -134,12 +134,12 @@ function enumerateProviderSettings(provider) {
 		const colorName = color.name ? game.i18n.localize(color.name) : color.id
 		let hint
 		if (color === unreachableColor)
-			hint = game.i18n.localize("drag-ruler.settings.speedProviderSettings.color.unreachable.hint")
+			hint = game.i18n.localize("speedruler.settings.speedProviderSettings.color.unreachable.hint")
 		else
-			hint = game.i18n.format("drag-ruler.settings.speedProviderSettings.color.hint", {colorName})
+			hint = game.i18n.format("speedruler.settings.speedProviderSettings.color.hint", {colorName})
 		colorSettings.push({
 			id: `${provider.id}.color.${color.id}`,
-			name: game.i18n.format("drag-ruler.settings.speedProviderSettings.color.name", {colorName}),
+			name: game.i18n.format("speedruler.settings.speedProviderSettings.color.name", {colorName}),
 			hint: hint,
 			type: Number,
 			value: toDomHex(game.settings.get(MODULE_ID, `speedProviders.${provider.id}.color.${color.id}`)),

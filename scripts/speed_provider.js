@@ -123,8 +123,8 @@ export class SpeedProvider {
 export class GenericSpeedProvider extends SpeedProvider {
 	get colors() {
 		return [
-			{id: "walk", default: 0x00FF00, name: "drag-ruler.genericSpeedProvider.speeds.walk"},
-			{id: "dash", default: 0xFFFF00, name: "drag-ruler.genericSpeedProvider.speeds.dash"}
+			{id: "walk", default: 0x00FF00, name: "speedruler.genericSpeedProvider.speeds.walk"},
+			{id: "dash", default: 0xFFFF00, name: "speedruler.genericSpeedProvider.speeds.dash"}
 		]
 	}
 
@@ -134,7 +134,7 @@ export class GenericSpeedProvider extends SpeedProvider {
 			return []
 		const tokenSpeed = parseFloat(getProperty(token, speedAttribute));
 		if (tokenSpeed === undefined) {
-			console.warn(`Drag Ruler (Generic Speed Provider) | The configured token speed attribute "${speedAttribute}" didn't return a speed value. To use colors based on drag distance set the setting to the correct value (or clear the box to disable this feature).`)
+			console.warn(`Speed Ruler (Generic Speed Provider) | The configured token speed attribute "${speedAttribute}" didn't return a speed value. To use colors based on drag distance set the setting to the correct value (or clear the box to disable this feature).`)
 			return []
 		}
 		const dashMultiplier = this.getSetting("dashMultiplier")
@@ -147,8 +147,8 @@ export class GenericSpeedProvider extends SpeedProvider {
 		return [
 			{
 				id: "speedAttribute",
-				name: "drag-ruler.genericSpeedProvider.settings.speedAttribute.name",
-				hint: "drag-ruler.genericSpeedProvider.settings.speedAttribute.hint",
+				name: "speedruler.genericSpeedProvider.settings.speedAttribute.name",
+				hint: "speedruler.genericSpeedProvider.settings.speedAttribute.hint",
 				scope: "world",
 				config: true,
 				type: String,
@@ -156,8 +156,8 @@ export class GenericSpeedProvider extends SpeedProvider {
 			},
 			{
 				id: "dashMultiplier",
-				name: "drag-ruler.genericSpeedProvider.settings.dashMultiplier.name",
-				hint: "drag-ruler.genericSpeedProvider.settings.dashMultiplier.hint",
+				name: "speedruler.genericSpeedProvider.settings.dashMultiplier.name",
+				hint: "speedruler.genericSpeedProvider.settings.dashMultiplier.hint",
 				scope: "world",
 				config: true,
 				type: Number,
