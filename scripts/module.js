@@ -1,3 +1,5 @@
+import { registerSpeedRuler } from "./patching.js";
+
 export const MODULE_ID = 'speedruler';
 
 export function log(...args) {
@@ -20,7 +22,7 @@ Hooks.once('init', async function() {
 Hooks.once('setup', async function() {
   log("Setup.");
   
-  }
+  });
 
 // modules ready
 // ready is called once everything is loaded up and ready to go.
@@ -41,7 +43,7 @@ Hooks.once('devModeReady', ({ registerPackageDebugFlag }) => {
 
 Hooks.once('libRulerReady', async function() {
   log("libRuler is ready to go.");
-  registerRuler();
+  registerSpeedRuler();
  
   // tell modules that the Speed Ruler is set up
   Hooks.callAll('speedRulerReady');
