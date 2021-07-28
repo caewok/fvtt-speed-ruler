@@ -25,7 +25,7 @@ export function registerSettings() {
     type: Boolean
   });
   
-  game.settings.register(settingsKey, "alwaysShowSpeedForPCs", {
+  game.settings.register(MODULE_ID, "alwaysShowSpeedForPCs", {
 		name: "speedruler.settings.alwaysShowSpeedForPCs.name",
 		hint: "speedruler.settings.alwaysShowSpeedForPCs.hint",
 		scope: "world",
