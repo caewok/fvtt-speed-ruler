@@ -18,8 +18,11 @@ export function speedRulerColorForPosition(wrapped, position) {
   if(!starting_token) return wrapped(position);
 
   // Don't apply colors if the current user does not have at least observer permissions
-  if(starting_token.actor.permission < CONST.ENTITY_PERMISSIONS.OBSERVER) {
-    return wrapped(position);
+  // If this is a pc and alwaysShowSpeedForPCs is enabled we show the color anyway
+  if(token.actor.permission < CONST.ENTITY_PERMISSIONS.OBSERVER && 
+    !(token.actor.data.type === "character" && 
+      getSetting("alwaysShowSpeedForPCs"))) {
+      return wrapped(position); 
   }
 
   const ranges = getRangesFromSpeedProvider(starting_token);

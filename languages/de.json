@@ -21,7 +21,10 @@
 	      "name": "Geschwindigkeitslineal verwenden",
 	      "hint": "Wenn ausgewählt, verwenden Sie das Geschwindigkeitslineal, um die Hervorhebung des Lineals zu färben, wenn die Messung von einem Token aus gestartet wird."
 	    },
-	  
+	    "alwaysShowSpeedForPCs": {
+				"name": "Geschwindigkeit von Spielercharakteren für jeden anzeigen",
+				"hint": "Wenn diese Einstellung aktiviert ist wird die Färbung der hervorgehobenen Felder bei Spielercharakteren allen Spielern angezeigt, selbst wenn diese keinen Zugriff auf den Charakterbogen haben."
+			},
       "speedProviderSettings": {
 				"name": "Einstellungen zur Spielsystemintegration",
 				"hint": "In diesem Menü befinden sich alle spielsystemspezifischen Einstellungen.",
