@@ -24,5 +24,5 @@ Add this [Manifest URL](https://github.com/caewok/fvtt-speed-ruler/releases/late
 
 I hope to have a future compatibility fix, based in libRuler, that allows Terrain Ruler and Drag Ruler to play nicely with Speed Ruler.
 
-In general, modules that overwrite or extend the Ruler Class without using libRuler may cause the elevation ruler module to fail to display or calculate correctly. 
+In general, modules that overwrite or extend the Ruler Class without using libRuler may cause the Speed Ruler module to fail to display or calculate correctly. 
 
