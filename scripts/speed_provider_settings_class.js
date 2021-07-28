@@ -1,3 +1,11 @@
+import { availableSpeedProviders, 
+         currentSpeedProvider, 
+         updateSpeedProvider } from "./api.js";
+
+import { SpeedProvider } from "./speed_provider.js"
+
+import { MODULE_ID } from "./module.js";
+
 export class SpeedProviderSettings extends FormApplication {
 	static get defaultOptions() {
 		return mergeObject(super.defaultOptions, {
@@ -61,7 +69,7 @@ export class SpeedProviderSettings extends FormApplication {
 	}
 
 	async _updateObject(event, formData) {
-		const selectedSpeedProvider = game.user.isGM ? formData.speedProvider : game.settings.get(settingsKey, "speedProvider")
+		const selectedSpeedProvider = game.user.isGM ? formData.speedProvider : game.settings.get(MODULE_ID, "speedProvider")
 		for (let [key, value] of Object.entries(formData)) {
 			// Check if this is color, convert the value to an integer
 			const splitKey = key.split(".", 3)
@@ -83,11 +91,11 @@ export class SpeedProviderSettings extends FormApplication {
 				setting = `speedProviders.${key}`
 
 			// Get the old setting value
-			const oldValue = game.settings.get(settingsKey, setting)
+			const oldValue = game.settings.get(MODULE_ID, setting)
 
 			// Only update the setting if it has been changed (this leaves the default in place if it hasn't been touched)
 			if (value !== oldValue)
-				game.settings.set(settingsKey, setting, value)
+				game.settings.set(MODULE_ID, setting, value)
 		}
 
 		// Activate the configured speed provider
@@ -134,7 +142,7 @@ function enumerateProviderSettings(provider) {
 			name: game.i18n.format("drag-ruler.settings.speedProviderSettings.color.name", {colorName}),
 			hint: hint,
 			type: Number,
-			value: toDomHex(game.settings.get(settingsKey, `speedProviders.${provider.id}.color.${color.id}`)),
+			value: toDomHex(game.settings.get(MODULE_ID, `speedProviders.${provider.id}.color.${color.id}`)),
 			isCheckbox: false,
 			isSelect: false,
 			isRange: false,

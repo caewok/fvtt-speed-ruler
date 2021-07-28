@@ -27,7 +27,7 @@ function register(module, type, speedProvider) {
 
 function setupProvider(speedProvider) {
 	if (speedProvider instanceof SpeedProvider) {
-		const unreachableColor = {id: "unreachable", default: speedProvider.defaultUnreachableColor, name: "drag-ruler.settings.speedProviderSettings.color.unreachable.name";}
+		const unreachableColor = {id: "unreachable", default: speedProvider.defaultUnreachableColor, name: "drag-ruler.settings.speedProviderSettings.color.unreachable.name"};
 		for (const color of speedProvider.colors.concat([unreachableColor])) {
 			game.settings.register(MODULE_ID, `speedProviders.${speedProvider.id}.color.${color.id}`, {
 				config: false,
@@ -43,7 +43,7 @@ function setupProvider(speedProvider) {
 	}
 
 	availableSpeedProviders[speedProvider.id] = speedProvider;
-	game.settings.settings.get("drag-ruler.speedProvider").default = getDefaultSpeedProvider();
+	game.settings.settings.get(`${MODULE_ID}.speedProvider`).default = getDefaultSpeedProvider();
 	updateSpeedProvider();
 }
 
@@ -68,8 +68,8 @@ export function getDefaultSpeedProvider() {
 export function updateSpeedProvider() {
 	// If the configured provider is registered use that one. 
 	// If not use the default provider.
-	const configuredProvider = game.settings.get("drag-ruler", "speedProvider");
-	currentSpeedProvider = availableSpeedProviders[configuredProvider] ?? availableSpeedProviders[game.settings.settings.get("drag-ruler.speedProvider").default];
+	const configuredProvider = game.settings.get(MODULE_ID, "speedProvider");
+	currentSpeedProvider = availableSpeedProviders[configuredProvider] ?? availableSpeedProviders[game.settings.settings.get(`${MODULE_ID}.speedProvider`).default];
 }
 
 export function initApi() {
