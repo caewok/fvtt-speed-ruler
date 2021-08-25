@@ -6,7 +6,7 @@
 
 This module allows the default Foundry measurement ruler to track speed of a token being measured. When you start a Ruler measurement from a token on the map, that token's speed is taken into account, and the highlighted ruler area changes color. For example, in the default setup, measuring with the ruler would highlight green squares within the token's base movement, yellow squares between the token's base and dash movement range, and red squares beyond that point.
 
-This module also provides the option for users or systems to define their own speed sets, which in turn can be used by other modules. This functionality was originally part of Drag Ruler(https://github.com/manuelVo/foundryvtt-drag-ruler), and moved here with permission of the author. 
+This module also provides the option for users or systems to define their own speed sets, which in turn can be used by other modules. This functionality was originally part of Drag Ruler(https://github.com/manuelVo/foundryvtt-drag-ruler). 
 
 # Installation
 Add this [Manifest URL](https://github.com/caewok/fvtt-speed-ruler/releases/latest/download/module.json) in Foundry to install.
